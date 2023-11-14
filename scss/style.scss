@@ -1,2 +1,12 @@
 @import 'reset';
 @import 'variable';
+
+p {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 100px auto;
+	padding: 80px;
+	font-size: 8rem;
+	border: 1px solid red;
+}

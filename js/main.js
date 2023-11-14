@@ -79,3 +79,16 @@ btnStart.addEventListener('click', () => {
 		console.log('1초마다 반복 실행');
 	}, 1000);
 });
+
+// 전자시계 출력
+const [spanHr, spanMin, spanSec] = document.querySelectorAll('.box span');
+
+setInterval(() => {
+	const hr2 = new Date().getHours();
+	const min2 = new Date().getMinutes();
+	const sec2 = new Date().getSeconds();
+
+	spanHr.innerText = hr2;
+	spanMin.innerText = min2;
+	spanSec.innerText = sec2;
+}, 1000);
