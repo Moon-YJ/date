@@ -55,14 +55,17 @@ console.log('독일시간', nowGerman);
   }, 1000);
 */
 
+const h1 = document.querySelector('h1');
 const [btnStart, btnStop] = document.querySelectorAll('button');
 // 전역변수를 사용해야하는 경우
 // --> 특정 변수값이 서로 다른 함수에서 공유되어야할 때
 // 코드블록 외부에서 변수선언뒤 null이나 기본 자료값으로 초기화
 // 함수 내부에서 새로 지역변수를 만드는 것이 기존 전역변수를 가져와서 새로운 값만 재할당
-let timer = null;
+let timer = null; // null로 초기화
+let num = 0; // 0으로 초기화
 
 timer = setInterval(() => {
+	h1.innerText = num++;
 	console.log('1초마다 반복 실행');
 }, 1000);
 
@@ -72,6 +75,7 @@ btnStop.addEventListener('click', () => {
 
 btnStart.addEventListener('click', () => {
 	timer = setInterval(() => {
+		h1.innerText = num++;
 		console.log('1초마다 반복 실행');
 	}, 1000);
 });
