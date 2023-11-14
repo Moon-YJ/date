@@ -30,3 +30,13 @@ console.log(hour);
 console.log(min);
 console.log(sec);
 console.log(time);
+
+const worldHour = now.getUTCHours(); // 전세계 표준시
+// 특정 나라 표준시 구하는 방법
+// 우리나라시간대를 밀리세컨드로 반환한 값 - 밀리세컨드 시차
+const timeGerman = time - 1000 * 60 * 60 * 8; // time에서 시차8시간 빼줌
+// 해당 밀리세컨드 시간값으로 시간 인스턴스값이 수정돼서 반환됨
+const nowGerman = new Date(timeGerman);
+console.log(worldHour);
+console.log('한국시간', now);
+console.log('독일시간', nowGerman);
